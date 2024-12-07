@@ -1,154 +1,127 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
-
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="../dist/css/jquery.animatedheadline.css">
-    
-    <title>Atif Syed</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atif Syed - Loader Animation</title>
+    <style>
+        /* Preloader Styles */
+        #loader-container {
+            font-family: 'Montserrat', sans-serif;
+            width: 100%;
+            height: 100%;
+            background: #008c8a;
+            color: #08aeac;
+            opacity: 0.99;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            display: table;
+        }
+        .loading-wrapper {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+        .image-wrap {
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            border-radius: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+        .loader-img-animation {
+            -webkit-animation: loader-img 2s infinite linear;
+            animation: loader-img 2s infinite linear;
+        }
+        @-webkit-keyframes loader-img {
+            0% { top: 0; }
+            50% { top: -20px; }
+            100% { top: 0; }
+        }
+        @keyframes loader-img {
+            0% { top: 0; }
+            50% { top: -20px; }
+            100% { top: 0; }
+        }
+        .image-wrap img {
+            width: 100px;
+            height: 100px;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        .loader-name {
+            color: #fafafa;
+            opacity: 0.9;
+            text-align: center;
+            font-size: 32px;
+            letter-spacing: -2px;
+            padding: 0 2px;
+            font-weight: 200;
+            margin-top: 12px;
+            transition: all 0.4s ease-in-out;
+        }
+        .loader-name-animation {
+            animation: loader-name 2s 1 ease-in;
+        }
+        @keyframes loader-name {
+            0% { transform: translateX(-200px); }
+            100% { transform: translateX(0); }
+        }
+        .loader-job {
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 200;
+            margin-top: 5px;
+            color: #d8d8d8;
+            font-size: 16px;
+            transition: all 0.4s ease-in-out;
+        }
+        .loader-job-animation {
+            animation: loader-job 2s 1 ease-in;
+        }
+        @keyframes loader-job {
+            0% { transform: translateX(200px); }
+            100% { transform: translateX(0); }
+        }
+        .social-profile {
+            display: flex;
+            justify-content: center;
+        }
+        .social-profile a {
+            color: #fff;
+            font-size: 14px;
+            font-style: italic;
+            margin-right: 6px;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <section class="title">
-        <h1>Open Source Technology Enthusiast</h1>
-    </section>
-    
-    <!-- Rotate -->
-    <section class="intro animate-rotate-1">
-        <h2 class="animation-type">Rotate</h2>
-        <h1 class="ah-headline">
-            <span>My favorite food is</span>
-            <span class="ah-words-wrapper">
-                <b class="is-visible">pizza</b>
-                <b>sushi</b>
-                <b>steak</b>
-            </span>
-        </h1>
-    </section>
+    <!-- Loader Section -->
+    <div class="loader-container" id="loader-container">
+        <div class="loading-wrapper">
+            <div class="image-wrap loader-img-animation" id="loader-animation">
+                <img src="https://avatars3.githubusercontent.com/u/35288246?s=400&u=98195e8dd07be73cda43202e2825a0b3ecfaded9&v=4" alt="Atif Syed">
+            </div>
+            <div class="loader-name loader-name-animation" id="loader-name"><strong>Atif Syed</strong></div>
+            <p class="loader-job loader-job-animation" id="loader-job">Full-Stack Developer</p>
+            <div class="social-profile">
+                <a href="https://www.facebook.com/imatifsyed/" target="_blank">Facebook</a>
+                <a href="https://github.com/iAtifSyed" target="_blank">GitHub</a>
+                <a href="mailto:atifsyedlive@gmail.com" target="_blank">Mail</a>
+            </div>
+        </div>
+    </div>
 
-    <!-- Type -->
-    <section class="intro animate-type">
-        <h2 class="animation-type">Type</h2>
-        <h1 class="ah-headline">
-            <span>My favorite food is</span> 
-            <span class="ah-words-wrapper waiting">
-                <b class="is-visible">pizza</b>
-                <b>sushi</b>
-                <b>steak</b>
-            </span>
-        </h1>
-    </section>
-
-    <!-- Rotate 2 -->
-    <section class="intro animate-rotate-2">
-        <h2 class="animation-type">Rotate 2</h2>
-        <h1 class="ah-headline">
-            <span>My favorite food is</span> 
-            <span class="ah-words-wrapper">
-                <b class="is-visible">pizza</b>
-                <b>sushi</b>
-                <b>steak</b>
-            </span>
-        </h1>
-    </section>
-
-    <!-- Loading Bar -->
-    <section class="intro animate-loading-bar">
-        <h2 class="animation-type">Loading Bar</h2>
-        <h1 class="ah-headline">
-            <span>My favorite food is</span>
-            <span class="ah-words-wrapper">
-                <b class="is-visible">pizza</b>
-                <b>sushi</b>
-                <b>steak</b>
-            </span>
-        </h1>
-    </section>
-
-    <!-- Slide -->
-    <section class="intro animate-slide">
-        <h2 class="animation-type">Slide</h2>
-        <h1 class="ah-headline">
-            <span>My favorite food is</span>
-            <span class="ah-words-wrapper">
-                <b class="is-visible">pizza</b>
-                <b>sushi</b>
-                <b>steak</b>
-            </span>
-        </h1>
-    </section>
-
-    <!-- Clip -->
-    <section class="intro animate-clip">
-        <h2 class="animation-type">Clip</h2>
-        <h1 class="ah-headline">
-            <span>My favorite food is</span>
-            <span class="ah-words-wrapper">
-                <b class="is-visible">pizza</b>
-                <b>sushi</b>
-                <b>steak</b>
-            </span>
-        </h1>
-    </section>
-
-    <!-- Zoom -->
-    <section class="intro animate-zoom">
-        <h2 class="animation-type">Zoom</h2>
-        <h1 class="ah-headline">
-            <span>My favorite food is</span>
-            <span class="ah-words-wrapper">
-                <b class="is-visible">pizza</b>
-                <b>sushi</b>
-                <b>steak</b>
-            </span>
-        </h1>
-    </section>
-
-    <!-- Rotate 3 -->
-    <section class="intro animate-rotate-3">
-        <h2 class="animation-type">Rotate 3</h2>
-        <h1 class="ah-headline">
-            <span>My favorite food is</span> 
-            <span class="ah-words-wrapper">
-                <b class="is-visible">pizza</b>
-                <b>sushi</b>
-                <b>steak</b>
-            </span>
-        </h1>
-    </section>
-
-    <!-- Scale -->
-    <section class="intro animate-scale">
-        <h2 class="animation-type">Scale</h2>
-        <h1 class="ah-headline">
-            <span>My favorite food is</span> 
-            <span class="ah-words-wrapper">
-                <b class="is-visible">pizza</b>
-                <b>sushi</b>
-                <b>steak</b>
-            </span>
-        </h1>
-    </section>
-
-    <!-- Push -->
-    <section class="intro animate-push">
-        <h2 class="animation-type">Push</h2>
-        <h1 class="ah-headline">
-            <span>My favorite food is</span>
-            <span class="ah-words-wrapper">
-                <b class="is-visible">pizza</b>
-                <b>sushi</b>
-                <b>steak</b>
-            </span>
-        </h1>
-    </section>
-<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-<script src="../dist/js/jquery.animatedheadline.min.js"></script>
-<script src="js/main.js"></script>
+    <!-- Main Content -->
+    <script>
+        // Remove loader after a delay
+        setTimeout(() => {
+            document.getElementById('loader-container').style.display = 'none';
+        }, 3000); // Adjust delay time as needed
+    </script>
 </body>
 </html>
