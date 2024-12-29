@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Dorbesh - Creative Portfolio Showcase Template">
-    <meta name="keywords" content="personal, portfolio new, html, one page, bootstrap, new html template, design, creative, onepage, clean, modern">
+    <meta name="keywords" content="personal, portfolio atifsyef, html, technology enthusiast, bootstrap, web developer, Web designer, creative, WooCommerce Expert, Social Media Expert">
     <meta name="author" content="Themesvila">
     <!-- PAGE TITLE -->
     <title>Atif Syed - Opensource Technology Enthusiast </title>
@@ -841,6 +841,7 @@
                                 <p>Pak Avenue Colony, Sahiwal</p>
                             </div>
                             <!-- / END CONTACT SINGLEDESIGN AREA -->
+				
                             <!-- START CONTACT SINGLEDESIGN AREA -->
                             <div class="single-contact wow fadeInUp" data-wow-delay=".4s">
                                 <div class="contact-icon">
@@ -861,47 +862,72 @@
                             <!-- / END CONTACT SINGLEDESIGN AREA -->
                         </div>
                     </div>
-                    <!-- START CONTACT FORM DESIGN AREA -->
-                    <div class="col-lg-8">
-                        <div class="contact-form contact-form-area wow fadeInUp delay-0-4s">
-                            <form id="contactForm" class="contactForm" name="contactForm" action="assets/php/form-process.php" method="post">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="name">Full Name</label>
-                                            <input type="text" id="name" name="name" class="form-control" value="" placeholder="Steve Milner" required="" data-error="Please enter your Name" />
-                                            <label for="name" class="for-icon"><i class="far fa-user"></i></label>
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="email">Email Address</label>
-                                            <input type="email" id="email" name="email" class="form-control" value="" placeholder="hello@websitename.com" required="" data-error="Please enter your Email" />
-                                            <label for="email" class="for-icon"><i class="far fa-envelope"></i></label>
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="message">Your Message</label>
-                                            <textarea name="message" id="message" class="form-control" rows="4" placeholder="Write Your message" required="" data-error="Please Write your Message"></textarea>
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group mb-0">
-                                            <button type="submit" class="theme-btn">
-                                                Send Me Message <i class="ri-mail-line"></i>
-                                            </button>
-                                            <div id="msgSubmit" class="hidden"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+<!-- START CONTACT FORM DESIGN AREA -->
+<div class="col-lg-8">
+    <div class="contact-form contact-form-area wow fadeInUp delay-0-4s">
+        <form id="contactForm" class="contactForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" class="form-control" value="" placeholder="Steve Milner" required data-error="Please enter your Name" />
+                        <label for="name" class="for-icon"><i class="far fa-user"></i></label>
+                        <div class="help-block with-errors"></div>
                     </div>
-                    <!-- / END CONTACT FORM DESIGN AREA -->
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-control" value="" placeholder="hello@websitename.com" required data-error="Please enter your Email" />
+                        <label for="email" class="for-icon"><i class="far fa-envelope"></i></label>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea name="message" id="message" class="form-control" rows="4" placeholder="Write Your message" required data-error="Please Write your Message"></textarea>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group mb-0">
+                        <button type="submit" class="theme-btn">
+                            Send Me Message <i class="ri-mail-line"></i>
+                        </button>
+                        <div id="msgSubmit" class="hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- / END CONTACT FORM DESIGN AREA -->
+
+<!-- Include EmailJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    // Initialize EmailJS with your Public Key
+    emailjs.init("ZPl4edjfEpCAcZM_-");
+
+    // Handle Form Submission
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Send form data via EmailJS
+        emailjs.sendForm("service_pnmj9s8", "template_u8efukb", this).then(
+            function () {
+                alert("Message sent successfully!");
+                document.getElementById("contactForm").reset(); // Reset the form
+            },
+            function (error) {
+                alert("Failed to send message. Please try again.");
+                console.error("EmailJS Error:", error);
+            }
+        );
+    });
+</script>
+
                 </div>
             </div>
         </div>
